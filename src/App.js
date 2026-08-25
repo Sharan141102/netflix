@@ -1,8 +1,12 @@
+import { Provider } from "react-redux";
+import Body from "./components/Body";
+import appStore from "./utils/appStore";
+
 const App = () => {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold text-red-600">Netflix</h1>
-    </div>
+    <Provider store={appStore}>
+      <Body />
+    </Provider>
   )
 }
 
