@@ -16,6 +16,17 @@
 - Update Profile API
 - User Auth Listener
 - Redirect to Browse Page
+- If the user is not logged in it should redirect to login page and if the user is logged in it should redirect to browse page
+- Unsubscribled to the onAuthStateChanged observer on component unmount
+- TMDB API integration
+- Get Movies from TMDB API
+- Custom hook for now playing movies
+- Create Movie slice
+- Update store with movies data
+- Fetch data for trailer vide
+- Update store with trailer data
+- Embeded youtube videio and make it autoplay and mute
+- Video Player component
 
 # Features
 
