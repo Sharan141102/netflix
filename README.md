@@ -25,8 +25,16 @@
 - Update store with movies data
 - Fetch data for trailer vide
 - Update store with trailer data
-- Embeded youtube videio and make it autoplay and mute
+- Embeded youtube video and make it autoplay and mute
 - Video Player component
+- Main Movie Component
+- Secondary Container Component
+- Movie Cards component
+- Movie List component
+- Custom hooks for fetching movies
+- GPT Search Page
+- GPT Search Bar
+- Multi Language feature
 
 # Features
 
