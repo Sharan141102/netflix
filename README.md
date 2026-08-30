@@ -35,6 +35,16 @@
 - GPT Search Page
 - GPT Search Bar
 - Multi Language feature
+- Get Gemini api key
+- Gemini search API call
+- getMovieSuggestions from TMDB
+- Created gpt slice
+- Toggle Gpt Search feature
+- Display Movie Suggestions
+- Memoization
+- Added .env file
+- Responsive Design
+- Optimized performance
 
 # Features
 
