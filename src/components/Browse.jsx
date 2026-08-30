@@ -20,7 +20,7 @@ const Browse = () => {
     useUpcomingMovies();
 
     return (
-        <div>
+        <div className="bg-black min-h-screen">
             <Header />
             {showGptSearch ? (
                 <GptSearchPage />

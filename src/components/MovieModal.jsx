@@ -87,22 +87,22 @@ const MovieModal = () => {
         : (selectedMovie.poster_path ? IMG_CDN_URL + selectedMovie.poster_path : null);
 
     return (
-        <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md transition-all duration-300"
+        <div 
+            className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-black/80 backdrop-blur-md transition-all duration-300"
             onClick={closeModal}
         >
-            <div
-                className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto bg-zinc-900 rounded-2xl shadow-2xl border border-zinc-700/50 text-white transform transition-all duration-300 scale-100"
+            <div 
+                className="relative w-full max-w-3xl lg:max-w-4xl max-h-[90vh] overflow-y-auto bg-zinc-900 rounded-2xl shadow-2xl border border-zinc-700/50 text-white transform transition-all duration-300 scale-100"
                 onClick={(e) => e.stopPropagation()}
                 style={{ scrollbarWidth: 'thin' }}
             >
                 {/* Close Button */}
-                <button
+                <button 
                     onClick={closeModal}
-                    className="absolute top-4 right-4 z-40 bg-zinc-900/80 hover:bg-zinc-700 text-white rounded-full p-2.5 backdrop-blur-sm border border-white/20 transition-all duration-200 hover:scale-110 shadow-lg cursor-pointer"
+                    className="absolute top-3 right-3 sm:top-4 sm:right-4 z-40 bg-zinc-900/80 hover:bg-zinc-700 text-white rounded-full p-2 sm:p-2.5 backdrop-blur-sm border border-white/20 transition-all duration-200 hover:scale-110 shadow-lg cursor-pointer"
                     aria-label="Close"
                 >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
@@ -117,13 +117,13 @@ const MovieModal = () => {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         />
                     ) : backdropImg ? (
-                        <img
-                            src={backdropImg}
-                            alt={movieTitle}
+                        <img 
+                            src={backdropImg} 
+                            alt={movieTitle} 
                             className="w-full h-full object-cover"
                         />
                     ) : (
-                        <div className="w-full h-full flex items-center justify-center bg-zinc-800 text-zinc-400">
+                        <div className="w-full h-full flex items-center justify-center bg-zinc-800 text-zinc-400 text-xs sm:text-sm">
                             <span>No video preview available</span>
                         </div>
                     )}
@@ -132,9 +132,9 @@ const MovieModal = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/30 to-transparent pointer-events-none" />
 
                     {/* Overlaid Title inside Header */}
-                    <div className="absolute bottom-6 left-6 right-6 z-20">
-                        <div className="space-y-2 max-w-xl">
-                            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight drop-shadow-md text-white">
+                    <div className="absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-6 z-20">
+                        <div className="space-y-1 sm:space-y-2 max-w-xl">
+                            <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-tight drop-shadow-md text-white">
                                 {movieTitle}
                             </h2>
                         </div>
@@ -142,11 +142,11 @@ const MovieModal = () => {
                 </div>
 
                 {/* Popover Details Content */}
-                <div className="p-6 sm:p-8 space-y-6">
+                <div className="p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-6">
                     {/* Metadata Badges */}
-                    <div className="flex flex-wrap items-center gap-3 text-sm text-zinc-300 font-medium">
+                    <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-zinc-300 font-medium">
                         {voteAverage && (
-                            <span className="flex items-center gap-1 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2.5 py-0.5 rounded-md font-semibold">
+                            <span className="flex items-center gap-1 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 sm:px-2.5 py-0.5 rounded-md font-semibold">
                                 ★ {voteAverage}
                             </span>
                         )}
@@ -156,21 +156,21 @@ const MovieModal = () => {
                             </span>
                         )}
                         {selectedMovie.original_language && (
-                            <span className="uppercase text-xs font-semibold px-2 py-0.5 bg-zinc-800 border border-zinc-700 rounded text-zinc-300">
+                            <span className="uppercase text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 bg-zinc-800 border border-zinc-700 rounded text-zinc-300">
                                 {selectedMovie.original_language}
                             </span>
                         )}
                         {selectedMovie.adult !== undefined && (
-                            <span className="text-xs px-2 py-0.5 border border-zinc-700 rounded text-zinc-400">
+                            <span className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 border border-zinc-700 rounded text-zinc-400">
                                 {selectedMovie.adult ? "18+" : "U/A 13+"}
                             </span>
                         )}
                     </div>
 
                     {/* Description / Overview */}
-                    <div className="space-y-2">
-                        <h3 className="text-lg font-semibold text-zinc-200">Overview</h3>
-                        <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
+                    <div className="space-y-1.5 sm:space-y-2">
+                        <h3 className="text-base sm:text-lg font-semibold text-zinc-200">Overview</h3>
+                        <p className="text-zinc-300 text-xs sm:text-sm md:text-base leading-relaxed">
                             {selectedMovie.overview || "No description available for this movie."}
                         </p>
                     </div>

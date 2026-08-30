@@ -15,14 +15,14 @@ const MovieCard = ({ movie, posterPath }) => {
     };
 
     return (
-        <div 
+        <div
             onClick={handleClick}
-            className="w-36 md:w-44 flex-shrink-0 cursor-pointer hover:scale-105 hover:shadow-xl hover:shadow-black/50 transition-all duration-300 rounded-lg overflow-hidden group relative"
+            className="w-28 md:w-36 flex-shrink-0 cursor-pointer hover:scale-105 hover:shadow-xl hover:shadow-black/50 transition-all duration-300 rounded-lg overflow-hidden group relative"
         >
-            <img 
-                className="w-full h-full object-cover rounded-lg group-hover:brightness-110 transition duration-300" 
-                src={IMG_CDN_URL + poster} 
-                alt={movie?.title || "Movie Card"} 
+            <img
+                className="w-full h-full object-cover rounded-lg group-hover:brightness-110 transition duration-300"
+                src={IMG_CDN_URL + poster}
+                alt={movie?.title || "Movie Card"}
                 loading="lazy"
             />
         </div>

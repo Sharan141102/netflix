@@ -56,28 +56,45 @@ const Header = () => {
     }
 
     return (
-        <>
-            <div className="absolute w-screen px-8 py-4 bg-gradient-to-b from-black to-transparent z-30 flex justify-between">
-                <img 
-                    onClick={handleLogoClick}
-                    className="w-44 mx-12 my-4 cursor-pointer" 
-                    src={NETFLIX_LOGO} 
-                    alt="Netflix Logo" 
-                />
-                {user && <div className="flex items-center p-2">
+        <header className="fixed top-0 left-0 right-0 w-full h-16 md:h-20 px-3 sm:px-6 md:px-10 z-40 flex flex-row justify-between items-center bg-black shadow-lg border-b border-zinc-900">
+            <img
+                onClick={handleLogoClick}
+                className="w-20 sm:w-28 md:w-40 cursor-pointer transition-transform duration-200 hover:scale-105"
+                src={NETFLIX_LOGO}
+                alt="Netflix Logo"
+            />
+            {user && (
+                <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
                     {showGptSearch && (
-                        <select onChange={handleLanguageChange} className="bg-black text-white px-4 h-10 my-4 mx-4 rounded-lg cursor-pointer">
+                        <select
+                            onChange={handleLanguageChange}
+                            className="bg-zinc-900 text-white border border-zinc-700 px-2 py-1 md:px-3 md:py-2 text-[10px] sm:text-xs md:text-sm rounded-md cursor-pointer focus:outline-none"
+                        >
                             {SUPPORTED_LANGUAGES.map((lang) => (
                                 <option key={lang.value} value={lang.value}>{lang.label}</option>
                             ))}
                         </select>
                     )}
-                    <button onClick={handleGptSearch} className="bg-green-500 text-white px-8 h-10 my-4 mx-4 rounded-lg cursor-pointer">{showGptSearch ? "Home" : "Search Movies"}</button>
-                    <img className="w-10 h-10 mx-4 my-4 rounded-lg" src={user?.photoURL || USER_AVATAR} alt="usericon" />
-                    <button onClick={handleSignOut} className="bg-red-700 text-white h-10 px-4 py-2 my-4 mx-4 rounded-lg cursor-pointer">Sign out</button>
+                    <button
+                        onClick={handleGptSearch}
+                        className="bg-green-600 hover:bg-green-700 text-white text-[10px] sm:text-xs md:text-sm font-medium px-2.5 sm:px-4 md:px-6 py-1 sm:py-1.5 md:py-2 rounded-md cursor-pointer transition duration-200 shadow-md whitespace-nowrap"
+                    >
+                        {showGptSearch ? "Home" : "Search Movies"}
+                    </button>
+                    <img
+                        className="w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-md object-cover border border-zinc-700"
+                        src={user?.photoURL || USER_AVATAR}
+                        alt="usericon"
+                    />
+                    <button
+                        onClick={handleSignOut}
+                        className="bg-red-700 hover:bg-red-800 text-white text-[10px] sm:text-xs md:text-sm font-medium px-2 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 rounded-md cursor-pointer transition duration-200 shadow-md whitespace-nowrap"
+                    >
+                        Sign out
+                    </button>
                 </div>
-                }
-            </div></>
+            )}
+        </header>
     )
 }
 

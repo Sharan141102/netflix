@@ -53,23 +53,21 @@ const GptSearchBar = () => {
     }
 
     return (
-        <div>
-            <div className="pt-[10%] flex justify-center">
-                <form className="w-1/2 bg-black grid grid-cols-12" onSubmit={(e) => e.preventDefault()}>
-                    <input
-                        ref={searchText}
-                        type="text"
-                        className="p-4 m-4 col-span-9"
-                        placeholder={languageConstants[langKey].gptSearchPlaceholder}
-                    />
-                    <button
-                        onClick={handleSearchClick}
-                        className="col-span-3 m-4 py-2 px-4 bg-red-700 text-white rounded-lg"
-                    >
-                        {languageConstants[langKey].search}
-                    </button>
-                </form>
-            </div>
+        <div className="pt-36 sm:pt-28 md:pt-[10%] flex justify-center px-3 sm:px-6">
+            <form className="w-full sm:w-11/12 md:w-8/12 lg:w-6/12 bg-black/90 grid grid-cols-12 rounded-xl border border-zinc-800 shadow-2xl p-1.5 md:p-2 backdrop-blur-sm" onSubmit={(e) => e.preventDefault()}>
+                <input
+                    ref={searchText}
+                    type="text"
+                    className="p-3 md:p-4 m-1 md:m-2 col-span-8 md:col-span-9 bg-zinc-800/90 text-white rounded-lg text-xs sm:text-sm md:text-base border border-zinc-700 focus:outline-none focus:border-white"
+                    placeholder={languageConstants[langKey].gptSearchPlaceholder}
+                />
+                <button
+                    onClick={handleSearchClick}
+                    className="col-span-4 md:col-span-3 m-1 md:m-2 py-2 px-2 md:px-4 bg-red-700 hover:bg-red-800 text-white rounded-lg text-xs sm:text-sm md:text-base font-semibold cursor-pointer transition duration-200 shadow-md"
+                >
+                    {languageConstants[langKey].search}
+                </button>
+            </form>
         </div>
     )
 }
