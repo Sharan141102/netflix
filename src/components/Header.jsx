@@ -41,6 +41,12 @@ const Header = () => {
         }
     }, [])
 
+    const handleLogoClick = () => {
+        if (showGptSearch) {
+            dispatch(toggleGptSearch())
+        }
+    }
+
     const handleSignOut = () => {
         signOut(auth).then(() => {
             // Sign-out successful.
@@ -51,8 +57,13 @@ const Header = () => {
 
     return (
         <>
-            <div className="absolute w-screen px-8 py-4 bg-gradient-to-b from-black to-transparent z-10 flex justify-between">
-                <img className="w-44 mx-12 my-4" src={NETFLIX_LOGO} alt="Netflix Logo" />
+            <div className="absolute w-screen px-8 py-4 bg-gradient-to-b from-black to-transparent z-30 flex justify-between">
+                <img 
+                    onClick={handleLogoClick}
+                    className="w-44 mx-12 my-4 cursor-pointer" 
+                    src={NETFLIX_LOGO} 
+                    alt="Netflix Logo" 
+                />
                 {user && <div className="flex items-center p-2">
                     {showGptSearch && (
                         <select onChange={handleLanguageChange} className="bg-black text-white px-4 h-10 my-4 mx-4 rounded-lg cursor-pointer">

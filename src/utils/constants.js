@@ -8,11 +8,13 @@ export const API_OPTIONS = {
     method: 'GET',
     headers: {
         accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YWNiZjc4ZGQ1Y2I5ZTQxNTFhM2JkYmI4NGIyMzBiMCIsIm5iZiI6MTc4Nzc0Mjg5OS4yMDcsInN1YiI6IjZhOGVjYWIzYTIzZDQ4NWNiYTExMjJlNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.YwAC8ue4PIEMYdTA9YJp19XYMAuTsyJUzs-z4XpuuCk'
+        Authorization: 'Bearer ' + process.env.REACT_APP_TMDB_KEY
     }
 };
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500/"
+
+export const GEMINI_KEY = process.env.REACT_APP_GEMINI_KEY
 
 export const SUPPORTED_LANGUAGES = [
     { value: "en", label: "English" },

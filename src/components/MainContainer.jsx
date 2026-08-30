@@ -14,6 +14,7 @@ const MainContainer = () => {
     return (
         <div className="">
             <VideoTitle
+                movie={mainMovie}
                 title={original_title}
                 description={overview}
             />
